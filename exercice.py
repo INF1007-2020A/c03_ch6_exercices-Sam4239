@@ -3,23 +3,51 @@
 
 
 def order(values: list = None) -> bool:
-    if values is None:
-        # TODO: Demander les valeurs ici
-        pass
+    resultat = True
+    liste_non_ordonne = []
+    while len(liste_non_ordonne) < 10:
+        liste_non_ordonne = liste_non_ordonne.append(int(input("Veuillez entrer un nombre: ")))
 
-    return False
+    index = 0
+    while index < len(liste_non_ordonne):
+        if liste_non_ordonne(index) < liste_non_ordonne(index + 1):
+            continue
+        else:
+        print("Houston, nous avons un probleme")
+            break
+        index += 1
+    print(resultat)
+
+    return
+
+    # print(ma_liste==sorted(ma_liste))
 
 
 def anagrams(words: list = None) -> bool:
-    if words is None:
-        # TODO: Demander les mots ici
-        pass
+    
+    mot1 = ALEVIN
+    mot2 = NIVELA
 
-    return False
+    mot1 = list(mot1)
+    mot2 = list(mot2)
+
+
+    if len(mot1) == len(mot2):
+        for lettre in mot1:
+            if lettre in mot2:
+                mot2.remove(lettre)
+        if len(mot2) == 0:
+            print("Annagramme")
+        else:
+            print("Il y a un probleme")
+
+    return
 
 
 def contains_doubles(items: list) -> bool:
-    return False
+    liste = [2, 3, 4, 1, 6, 7, 4, 6, 1, 6, 3, 4, 6, 1, 1, 1, 1]
+    print(len(liste) == len(set(liste)))
+    return 
 
 
 def best_grades(student_grades: dict) -> dict:
@@ -28,11 +56,16 @@ def best_grades(student_grades: dict) -> dict:
 
 
 def histogram(sentence: str) -> tuple:
-    # TODO: Créer l'histogramme a l'aide d'un dictionnaire
-    #       Afficher l'histogramme et les lettres les plus fréquentes
-    #       Retourner l'histogramme et le tableau de lettres
+    phrase = "Je suis le roi du monde."
 
-    return {}, []
+    phrase_set = set(phrase)
+    resultat = {}
+    for lettre in phrase_set:
+        resultat[lettre] = phrase.count(lettre)
+    
+    print(resultat)
+
+    return 
 
 
 def get_recipes():
